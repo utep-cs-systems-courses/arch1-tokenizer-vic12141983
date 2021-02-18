@@ -1,0 +1,306 @@
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> make token
+cc -g -O3   -c -o Uimain.o Uimain.c
+Uimain.c: In function ‘main’:
+Uimain.c:16:3: warning: implicit declaration of function ‘gets’; did you mean ‘fgets’? [-Wimplicit-function-declaration]
+   gets(str);
+   ^~~~
+   fgets
+cc -g -O3   -c -o tokenizer.o tokenizer.c
+cc -o token -g -O3 Uimain.o tokenizer.o history.o
+/usr/lib64/gcc/x86_64-suse-linux/7/../../../../x86_64-suse-linux/bin/ld: Uimain.o: in function `main':
+/home/student/Documents/arch1-tokenizer-vic12141983/src/Uimain.c:16: warning: the `gets' function is dangerous and should not be used.
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> ls
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> ;s
+bash: syntax error near unexpected token `;'
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> ls
+history.c  history.o  README.md  token        tokenizer.c~  tokenizer.o  Uimain.o
+history.h  Makefile   tester.c   tokenizer.c  tokenizer.h   Uimain.c
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> make token
+cc -g -O3   -c -o Uimain.o Uimain.c
+Uimain.c: In function ‘main’:
+Uimain.c:16:3: error: too few arguments to function ‘fgets’
+   fgets(str);
+   ^~~~~
+In file included from Uimain.c:1:0:
+/usr/include/stdio.h:564:14: note: declared here
+ extern char *fgets (char *__restrict __s, int __n, FILE *__restrict __stream)
+              ^~~~~
+make: *** [<builtin>: Uimain.o] Error 1
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> ls
+history.c  history.o  README.md  token        tokenizer.c~  tokenizer.o  Uimain.o
+history.h  Makefile   tester.c   tokenizer.c  tokenizer.h   Uimain.c
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> make token
+cc -g -O3   -c -o Uimain.o Uimain.c
+cc -o token -g -O3 Uimain.o tokenizer.o history.o
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src>./token
+$ enter your word 
+Hello world 
+Hello world 
+
+Now checking for empty spaces 0 
+now checking for non empty spaces 1 
+Now counting number of  words in string 17 
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src>make 
+make: 'token' is up to date.
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> make token
+make: 'token' is up to date.
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> ./token
+$ enter your word 
+hello
+hello
+
+Now checking for empty spaces 0 
+now checking for non empty spaces 1 
+Now counting number of  words in string 8 
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> make
+cc -g -O3   -c -o tokenizer.o tokenizer.c
+cc -o token -g -O3 Uimain.o tokenizer.o history.o
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> ./token
+$ enter your word 
+hello world
+hello world
+
+Now checking for empty spaces 0 
+now checking for non empty spaces 1 
+Now counting number of  words in string 12 
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> make token
+cc -g -O3   -c -o tokenizer.o tokenizer.c
+tokenizer.c: In function ‘count_words’:
+tokenizer.c:38:3: error: ‘state’ undeclared (first use in this function)
+   state = OUT;
+   ^~~~~
+tokenizer.c:38:3: note: each undeclared identifier is reported only once for each function it appears in
+tokenizer.c:40:11: warning: comparison between pointer and integer
+     if(str=='\n'||str == ' ' || str == '\t')
+           ^~
+tokenizer.c:40:23: warning: comparison between pointer and integer
+     if(str=='\n'||str == ' ' || str == '\t')
+                       ^~
+tokenizer.c:40:37: warning: comparison between pointer and integer
+     if(str=='\n'||str == ' ' || str == '\t')
+                                     ^~
+tokenizer.c:45:5: error: expected ‘;’ before ‘}’ token
+     }
+     ^
+tokenizer.c:48:3: error: expected ‘;’ before ‘}’ token
+   }
+   ^
+make: *** [<builtin>: tokenizer.o] Error 1
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> make token
+cc -g -O3   -c -o tokenizer.o tokenizer.c
+tokenizer.c: In function ‘count_words’:
+tokenizer.c:38:3: error: ‘state’ undeclared (first use in this function)
+   state = OUT;
+   ^~~~~
+tokenizer.c:38:3: note: each undeclared identifier is reported only once for each function it appears in
+tokenizer.c:40:12: warning: comparison between pointer and integer
+     if(str == '\n'|| str == ' ' || str == '\t')
+            ^~
+tokenizer.c:40:26: warning: comparison between pointer and integer
+     if(str == '\n'|| str == ' ' || str == '\t')
+                          ^~
+tokenizer.c:40:40: warning: comparison between pointer and integer
+     if(str == '\n'|| str == ' ' || str == '\t')
+                                        ^~
+tokenizer.c:45:5: error: expected ‘;’ before ‘}’ token
+     }
+     ^
+tokenizer.c:48:3: error: expected ‘;’ before ‘}’ token
+   }
+   ^
+make: *** [<builtin>: tokenizer.o] Error 1
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> shell
+If 'shell' is not a typo you can use command-not-found to lookup the package that contains it, like this:
+    cnf shell
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> make token
+cc -g -O3   -c -o tokenizer.o tokenizer.c
+tokenizer.c: In function ‘count_words’:
+tokenizer.c:38:3: error: ‘state’ undeclared (first use in this function)
+   state = OUT;
+   ^~~~~
+tokenizer.c:38:3: note: each undeclared identifier is reported only once for each function it appears in
+tokenizer.c:40:12: warning: comparison between pointer and integer
+     if(str == '\n'|| str == ' ' || str == '\t')
+            ^~
+tokenizer.c:40:26: warning: comparison between pointer and integer
+     if(str == '\n'|| str == ' ' || str == '\t')
+                          ^~make token
+tokenizer.c:40:40: warning: comparison between pointer and integer
+     if(str == '\n'|| str == ' ' || str == '\t')
+                                        ^~
+tokenizer.c:45:5: error: expected ‘;’ before ‘}’ token
+     }
+     ^
+tokenizer.c:48:3: error: expected ‘;’ before ‘}’ token
+   }
+   ^
+make: *** [<builtin>: tokenizer.o] Error 1
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src>                           ^~make token
+tokenizer.c:40:40: warning: comparison between pointer and integer
+     if(str == '\n'|| str == ' ' || str == '\t')
+                                        ^~
+tokenizer.c:45:5: error: expected ‘;’ before ‘}’ token
+     }
+     ^
+tokenizer.c:48:3: error: expected ‘;’ before ‘}’ token
+   }
+   ^
+make: *** [<builtin>: tokenizer.o] Error 1
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> 
+If '^~make' is not a typo you can use command-not-found to lookup the package that contains it, like this:
+    cnf ^~make
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> If 'tokenizer.c:40:40:' is not a typo you can use command-not-found to lookup the package that contains it, like this:
+    cnf tokenizer.c:40:40:
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> > > > bash: syntax error near unexpected token `}'
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> If '^' is not a typo you can use command-not-found to lookup the package that contains it, like this:
+    cnf ^
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> If 'tokenizer.c:48:3:' is not a typo you can use command-not-found to lookup the package that contains it, like this:
+    cnf tokenizer.c:48:3:
+If '’' is not a typo you can use command-not-found to lookup the package that contains it, like this:
+    cnf ’
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> bash: syntax error near unexpected token `}'
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> If '^' is not a typo you can use command-not-found to lookup the package that contains it, like this:
+    cnf ^
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> bash: builtin: No such file or directory
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> bash: syntax error near unexpected token `newline'
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> make token
+cc -g -O3   -c -o tokenizer.o tokenizer.c
+tokenizer.c: In function ‘count_words’:
+tokenizer.c:38:3: error: ‘state’ undeclared (first use in this function)
+   state = OUT;
+   ^~~~~
+tokenizer.c:38:3: note: each undeclared identifier is reported only once for each function it appears in
+tokenizer.c:45:5: error: expected ‘;’ before ‘}’ token
+     }
+     ^
+tokenizer.c:48:3: error: expected ‘;’ before ‘}’ token
+   }
+   ^
+make: *** [<builtin>: tokenizer.o] Error 1
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> ls
+history.c  history.o  README.md  token        tokenizer.c~  tokenizer.o  Uimain.o
+history.h  Makefile   tester.c   tokenizer.c  tokenizer.h   Uimain.c
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> make token
+cc -g -O3   -c -o tokenizer.o tokenizer.c
+tokenizer.c: In function ‘count_words’:
+tokenizer.c:45:5: error: expected ‘;’ before ‘}’ token
+     }
+     ^
+tokenizer.c:48:3: error: expected ‘;’ before ‘}’ token
+   }
+   ^
+make: *** [<builtin>: tokenizer.o] Error 1
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> make token
+cc -g -O3   -c -o tokenizer.o tokenizer.c
+cc -o token -g -O3 Uimain.o tokenizer.o history.o
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> ./token
+$ enter your word 
+Hello world 
+Hello world 
+
+Now checking for empty spaces 0 
+now checking for non empty spaces 1 
+Now counting number of  words in string 0 
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> make token
+cc -g -O3   -c -o Uimain.o Uimain.c
+Uimain.c: In function ‘main’:
+Uimain.c:21:76: error: expected ‘)’ before ‘;’ token
+    printf("Now counting number of  words in string %d \n",count_words(word);
+                                                                            ^
+Uimain.c:22:1: error: expected ‘;’ before ‘}’ token
+ }
+ ^
+make: *** [<builtin>: Uimain.o] Error 1
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> make token
+cc -g -O3   -c -o Uimain.o Uimain.c
+cc -o token -g -O3 Uimain.o tokenizer.o history.o
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> ./token
+$ enter your word 
+hello world
+hello world
+
+Now checking for empty spaces 0 
+now checking for non empty spaces 1 
+Now counting number of  words in string 0 
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> make 
+cc -g -O3   -c -o tokenizer.o tokenizer.c
+cc -o token -g -O3 Uimain.o tokenizer.o history.o
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> ./ token
+bash: ./: Is a directory
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> ./token
+$ enter your word 
+hello world
+hello world
+
+Now checking for empty spaces 0 
+now checking for non empty spaces 1 
+Now counting number of  words in string 0 
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> make 
+cc -g -O3   -c -o tokenizer.o tokenizer.c
+cc -o token -g -O3 Uimain.o tokenizer.o history.o
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> ./token
+$ enter your word 
+hello world
+hello world
+
+Now checking for empty spaces 0 
+now checking for non empty spaces 1 
+Now counting number of  words in string 0 
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> make 
+cc -g -O3   -c -o tokenizer.o tokenizer.c
+tokenizer.c: In function ‘count_words’:
+tokenizer.c:40:30: warning: multi-character character constant [-Wmultichar]
+     if(*str == ' '|| *str == '\n ' || *str == '\t')
+                              ^~~~~
+cc -o token -g -O3 Uimain.o tokenizer.o history.o
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> make
+cc -g -O3   -c -o tokenizer.o tokenizer.c
+tokenizer.c: In function ‘count_words’:
+tokenizer.c:40:30: warning: multi-character character constant [-Wmultichar]
+     if(*str == ' '|| *str == ' \n ' || *str == '\t')
+                              ^~~~~~
+cc -o token -g -O3 Uimain.o tokenizer.o history.o
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> make
+cc -g -O3   -c -o tokenizer.o tokenizer.c
+cc -o token -g -O3 Uimain.o tokenizer.o history.o
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> ./token
+$ enter your word 
+hello world
+hello world
+
+Now checking for empty spaces 0 
+now checking for non empty spaces 1 
+Now counting number of  words in string 0 
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> make
+cc -g -O3   -c -o tokenizer.o tokenizer.c
+cc -o token -g -O3 Uimain.o tokenizer.o history.o
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> ./token
+$ enter your word 
+hello world
+hello world
+
+Now checking for empty spaces 0 
+now checking for non empty spaces 1 
+Now counting number of  words in string 0 
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> 
+make
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> cc -g -O3   -c -o Uimain.o Uimain.c
+cc -o token -g -O3 Uimain.o tokenizer.o history.o
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> ./token
+$hello world
+hello world
+
+Now checking for empty spaces 0 
+now checking for non empty spaces 1 
+Now counting number of  words in string 0 
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> make
+cc -g -O3   -c -o tokenizer.o tokenizer.c
+cc -o token -g -O3 Uimain.o tokenizer.o history.o
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> ./token
+$hello world
+hello world
+
+Now checking for empty spaces 0 
+now checking for non empty spaces 1 
+Now counting number of  words in string 0 
+student@systems-vm:~/Documents/arch1-tokenizer-vic12141983/src> 
