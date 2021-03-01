@@ -22,41 +22,47 @@ int non_space_char(char c){
    space-separated word in zero-terminated str.  Return a zero pointer if 
    str does not contain any words. */
 char *word_start(char *str){
-  while(*str){
-    if(non_space_char(*str)){
-      return str;
-    }
+  while(non_space_char(*str)){ 
     str++; 
   }
-  return 0;
+  return str;
 
 }
 
 /* Returns a pointer terminator char following *word
  Return a zero pointer if str does not contain any words.  */
 char *word_terminator(char *word){
-  while(*word){
-    if(space_char(*word){
-	return word;
-      }
+    while(space_char(*word)){
       word++;
   }
-  return 0;        
+  return word;        
 }
 
 /* Counts the number of words in the string argument. */
 int count_words(char *str){
-
-  int count =0;
-  while(*str){
+  
+  int count = 0;
+  char *p = str;
+  
+  while(*p){
+    p = word_start(p);     
+    p = word_terminator(p);
+    count++;
+    }
+  return count;
+        
 }
-  hello    world       
 
-}
-
-/* Returns a fresly allocated new zero-terminated string 
+/* Returns a freshly allocated new zero-terminated string 
    containing <len> chars from <inStr> */
-char *copy_str(char *inStr, short len);
+ char *copy_str(char *inStr, short len){
+   char *fresh = (char*) malloc(len+1*sizeof(char));
+   for( int i = 0; i<len;i++){
+     fresh[i] = inStr[i];
+   }
+   fresh[len] ='\0';
+   return fresh;
+ }
 
 /* Returns a freshly allocated zero-terminated vector of freshly allocated 
    space-separated tokens from zero-terminated str.
