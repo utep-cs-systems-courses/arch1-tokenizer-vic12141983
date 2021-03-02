@@ -3,20 +3,24 @@
 # include "tokenizer.h"
 # include "history.h"
 
-
 int main(){
   char word[100];
+    
   
-  
-  
-  printf("$");
+  printf("Please enter a word:  ");
   fgets(word,100,stdin);
   puts(word);
-  
+ 
   
 
    
-   printf("Now checking for empty spaces %d \n",space_char(word[1]));
-   printf("now checking for non empty spaces %d \n" ,non_space_char(word[1]));
-   printf("Now counting number of  words in string %d \n",count_words(word));
+   printf("Checking for empty spaces before first char: %d \n",space_char(word[1]));
+   printf("Spaces afer the each word: %d \n" ,non_space_char(word[1]));
+   printf("Now counting number of  words in string: %d \n",count_words(word));
+   printf("Now copying in String in freshly new String: % s \n ",copy_str(word,19));
+   printf("next line \n");
+   char** test = tokenize(word);
+   print_tokens(test);
+   printf("line after tokenizer \n");   
+
 }
