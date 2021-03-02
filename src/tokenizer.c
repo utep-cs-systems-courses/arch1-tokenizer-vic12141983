@@ -1,9 +1,10 @@
+
 #include <stdio.h>
 #include  <stdlib.h>
 #include "tokenizer.h"
 
 
-/*return true for space */
+/*return true if c is white space character */
 int space_char(char c){
  
   return (c ==' ' || c =='\t'&& c!= '\0' );
@@ -81,19 +82,19 @@ char **tokenize(char* str){
     if(*str = ' '){
        word_start(str);
     }
-    int len_of = word_start(str) - word_terminator(str);
+    int len_of = word_terminator(str) - word_start(str);
     tokens[i] =  copy_str(str,len_of);
     str = word_start(word_terminator(str));
   }
+  tokens[len+1] = 0;
   return tokens;
  
 }
 
 /* Prints all tokens. */
 void print_tokens(char **tokens){
-  int count =0
-  while(count!= '\0'){
-    printf(*tokens);
+  while(*tokens!=0){
+    printf("this is %s \n",*tokens);
     tokens++;
   }
   
