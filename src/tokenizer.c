@@ -78,8 +78,8 @@ char **tokenize(char* str){
   char **tokens = (char**) malloc((len+1)*(sizeof(char*)));
 
   for(int i =0;i<len;i++){
-    if(str[0] = ' '){
-       str = word_start(str);
+    if(*str = ' '){
+       word_start(str);
     }
     int len_of = word_start(str) - word_terminator(str);
     tokens[i] =  copy_str(str,len_of);
