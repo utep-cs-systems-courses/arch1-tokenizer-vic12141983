@@ -56,7 +56,7 @@ int count_words(char *str){
 /* Returns a freshly allocated new zero-terminated string 
    containing <len> chars from <inStr> */
  char *copy_str(char *inStr, short len){
-   char *fresh = (char*) malloc(len+1*sizeof(char));
+   char *fresh = (char*) malloc((len+1)*sizeof(char));
    for( int i = 0; i<len;i++){
      fresh[i] = inStr[i];
    }
@@ -73,10 +73,31 @@ int count_words(char *str){
      tokens[2] = "string" 
      tokens[3] = 0
 */
-char **tokenize(char* str);
+char **tokenize(char* str){
+  int len = count_words(str);
+  char **tokens = (char**) malloc((len+1)*(sizeof(char*)));
+
+  for(int i =0;i<len;i++){
+    if(str[0] = ' '){
+       str = word_start(str);
+    }
+    int len_of = word_start(str) - word_terminator(str);
+    tokens[i] =  copy_str(str,len_of);
+    str = word_start(word_terminator(str));
+  }
+  return tokens;
+ 
+}
 
 /* Prints all tokens. */
-void print_tokens(char **tokens);
+void print_tokens(char **tokens){
+  int count =0
+  while(count!= '\0'){
+    printf(*tokens);
+    tokens++;
+  }
+  
 
+}
 /* Frees all tokens and the vector containing themx. */
 void free_tokens(char **tokens);
