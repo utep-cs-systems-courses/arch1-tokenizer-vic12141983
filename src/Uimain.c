@@ -24,7 +24,7 @@ int main(){
    char** test = tokenize(word);
    print_tokens(test);
    free_tokens(test);
-   
-   
+   List *ll = init_history();
+   //add_history(ll,word);
 
 }
