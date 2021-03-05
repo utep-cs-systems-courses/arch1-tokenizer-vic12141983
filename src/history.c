@@ -8,6 +8,9 @@
    List* list - the linked list
    char* str - the string to store
 */
+List* init_history(){
+  List *ll = malloc(sizeof(List);
+}
 
 void add_history(List *list, char *str){
   Item *node = malloc (sizeof(Item));
